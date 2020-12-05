@@ -1,0 +1,11 @@
+{
+  "name": "iLikeMyVideosDead",
+  "version": "1.0",
+  "description": "Remove live videos from Youtube results.",
+  "manifest_version": 2,
+  "content_scripts": [{
+    "matches": ["https://youtube.com/*"],
+    "js": ["content.js"],
+    "run_at": "document_end"
+  }]
+}
