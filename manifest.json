@@ -4,7 +4,7 @@
   "description": "Remove live videos from Youtube results.",
   "manifest_version": 2,
   "content_scripts": [{
-    "matches": ["https://youtube.com/*"],
+    "matches": ["https://www.youtube.com/*"],
     "js": ["content.js"],
     "run_at": "document_end"
   }]
