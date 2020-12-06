@@ -19,7 +19,11 @@ function getAll(node, pred) {
 const TAGS = ["YTD-COMPACT-VIDEO-RENDERER", "YTD-VIDEO-RENDERER", "YTD-RICH-ITEM-RENDERER"]
 
 function clean(node) {
-  for (let elem of getAll(node, node => TAGS.includes(node.tagName) && node.querySelector(".badge-style-type-live-now"))) {
+  for (let elem of getAll(node, node => TAGS.includes(node.tagName) && (
+    node.querySelector(".badge-style-type-live-now") || 
+    [...node.querySelectorAll(".ytd-video-meta-block")].some(v => (v.textContent || "").startsWith("Streamed")
+  )
+    ))) {
       elem.remove()
   }
 }
